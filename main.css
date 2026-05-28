@@ -2,13 +2,12 @@
 
 
 
-/* Set the container to relative positioning and make it the reference point for absolutely positioned child elements */
+/* #1 Using absolute positioning in addition to the z-index property (for layering), please position box #1 behind box #2. */
 .container {
     /* relative makes the container the reference point for absolutely positioned child elements */
+	/* position relative tutorial link https://www.w3schools.com/cSS/css_position.asp */
 	position: relative; 
 
-    /* Set a min-height to ensure the container has enough height to contain the absolutely positioned elements */
-	min-height: 430px;
 }
 
 /* Now target the first child block */
