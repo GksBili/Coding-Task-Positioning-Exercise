@@ -3,34 +3,30 @@
 
 
 /* #1 Using absolute positioning in addition to the z-index property (for layering), please position box #1 behind box #2. */
+
+.container > .block:first-child {
+	position: absolute;
+    /* set the position of the first block to the top-left corner of the container */
+	top: 0;
+	left: 0;
+    /* set the z-index order so it appears on behind other elements */
+	z-index: 1;
+}
+
+.container > .block:nth-child(2) {
+	position: absolute;
+    /* Same thing, but positioned further down and to the right, and z-index is greater so it appears on top of the first block */
+	top: 2rem;
+	left: 2rem;
+	z-index: 2;
+}
+
+/* #2 Using a combination of relative and absolute positioning on box #2 and #3, please position box #3 in the bottom-right corner of box #2. */
 .container {
     /* relative makes the container the reference point for absolutely positioned child elements */
 	/* position relative tutorial link https://www.w3schools.com/cSS/css_position.asp */
 	position: relative; 
 
-}
-
-/* Now target the first child block */
-.container > .block:first-child {
-    /* absolute positions the first block element relative to its nearest positioned ancestor */
-	position: absolute;
-
-    /* set the position of the first block to the top-left corner of the container */
-	top: 0;
-	left: 0;
-
-    /* set the z-index order so it appears on behind other elements */
-	z-index: 1;
-}
-
-/* Now target the second child block */
-.container > .block:nth-child(2) {
-	position: absolute;
-
-    /* Same thing, but positioned further down and to the right, and z-index is greater so it appears on top of the first block */
-	top: 2rem;
-	left: 2rem;
-	z-index: 2;
 }
 
 /* Position the small green block within the second block. The .small is for elements with the class small which happens to be the green block */
@@ -41,20 +37,13 @@
     bottom: 0;
 }
 
-
+/* #3 Using fixed positioning, please position box #4 in the bottom-right corner of the browser window.*/
 .container > .block:nth-child(3) {
 
     /* Set child 3 (not 4 cause the small block is inside the second block), and set it to fixed positioning*/
     position:fixed;
     bottom: 0;
     right: 0;
-
-    min-width: 0;
-    min-height: 0;
-
-    /* needed this because of the rule at the top limiting max width */
-    max-width: none;
-
     /* Set the width and height for the fixed-positioned block to 25vw and 25vh */
     width: 25vw;
     height: 25vh;
