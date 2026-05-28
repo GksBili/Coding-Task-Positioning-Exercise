@@ -28,7 +28,6 @@
 }
 
 /* Position the small green block within the second block. The .small is for elements with the class small which happens to be the green block */
-
 .block bg-green small {
     position: absolute;
 	/*  Find the second block -> and position the small block within it to right and bottom 0 */
@@ -39,7 +38,7 @@
 /* #3 Using fixed positioning, please position box #4 in the bottom-right corner of the browser window.*/
 .block bg-purple{
 
-    /* Set child 3 (not 4 cause the small block is inside the second block), and set it to fixed positioning*/
+    /* Set it to fixed positioning*/
     position:fixed;
     bottom: 0;
     right: 0;
