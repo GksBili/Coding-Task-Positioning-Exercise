@@ -1,7 +1,6 @@
 *,*::after,*::before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}body{font-family:Arial, Verdana, sans-serif}.container .block{min-height:200px;min-width:200px;max-width:300px;color:white;padding:0.5em;background-color:#333;border:0.1em solid #DDD}.container .block h2{margin:0;font-weight:normal}.container .block.small{min-height:auto;min-width:auto;width:100px;height:100px}.container .bg-blue{background-color:blue}.container .bg-green{background-color:green}.container .bg-purple{background-color:purple}
 
 
-
 /* #1 Using absolute positioning in addition to the z-index property (for layering), please position box #1 behind box #2. */
 .block {
 	position: absolute;
@@ -19,22 +18,19 @@
 	left: 2rem;
 	z-index: 2;
 }
-
 /* #2 Using a combination of relative and absolute positioning on box #2 and #3, please position box #3 in the bottom-right corner of box #2. */
 .container {
     /* relative makes the container the reference point for absolutely positioned child elements */
 	/* position relative tutorial link https://www.w3schools.com/cSS/css_position.asp */
 	position: relative; 
 }
-
 /* Position the small green block within the second block. The .small is for elements with the class small which happens to be the green block */
 .block bg-green small {
     position: absolute;
-	/*  Find the second block -> and position the small block within it to right and bottom 0 */
+	/*  Find the second block and position the small block within it to right and bottom 0 */
     right: 0;
     bottom: 0;
 }
-
 /* #3 Using fixed positioning, please position box #4 in the bottom-right corner of the browser window.*/
 .block bg-purple{
 
