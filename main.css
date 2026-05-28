@@ -3,19 +3,18 @@
 
 
 /* #1 Using absolute positioning in addition to the z-index property (for layering), please position box #1 behind box #2. */
-
-.container > .block:first-child {
+.block {
 	position: absolute;
     /* set the position of the first block to the top-left corner of the container */
 	top: 0;
 	left: 0;
     /* set the z-index order so it appears on behind other elements */
+	/* Definition: The z-index property specifies the stack order of an element.An element with greater stack order is 
+	always in front of an element with a LOWER stack order. */ 
 	z-index: 1;
 }
-
-.container > .block:nth-child(2) {
+.block bg-blue{
 	position: absolute;
-    /* Same thing, but positioned further down and to the right, and z-index is greater so it appears on top of the first block */
 	top: 2rem;
 	left: 2rem;
 	z-index: 2;
@@ -26,19 +25,19 @@
     /* relative makes the container the reference point for absolutely positioned child elements */
 	/* position relative tutorial link https://www.w3schools.com/cSS/css_position.asp */
 	position: relative; 
-
 }
 
 /* Position the small green block within the second block. The .small is for elements with the class small which happens to be the green block */
-/* Basically find the second block -> and position the small block within it to right and bottom 0 */
-.container > .block:nth-child(2) .small {
+
+.block bg-green small {
     position: absolute;
+	/*  Find the second block -> and position the small block within it to right and bottom 0 */
     right: 0;
     bottom: 0;
 }
 
 /* #3 Using fixed positioning, please position box #4 in the bottom-right corner of the browser window.*/
-.container > .block:nth-child(3) {
+.block bg-purple{
 
     /* Set child 3 (not 4 cause the small block is inside the second block), and set it to fixed positioning*/
     position:fixed;
